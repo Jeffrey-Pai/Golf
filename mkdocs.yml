@@ -112,7 +112,30 @@ nav:
       - 讀果嶺: 05-shot-techniques/putting/reading-greens.md
       - 長距推桿: 05-shot-techniques/putting/lag-putting.md
       - 壓力推桿: 05-shot-techniques/putting/pressure-putting.md
+  - 💪 健身與保養:
+    - 總覽: 06-fitness-and-health/README.md
+    - 肌力訓練:
+      - 訓練總覽: 06-fitness-and-health/strength-training/overview.md
+      - 核心肌群訓練: 06-fitness-and-health/strength-training/core-training.md
+      - 髖部旋轉訓練: 06-fitness-and-health/strength-training/hip-rotation.md
+      - 肩部穩定訓練: 06-fitness-and-health/strength-training/shoulder-stability.md
+      - 下肢爆發力: 06-fitness-and-health/strength-training/leg-power.md
+    - 柔軟度訓練:
+      - 打球前暖身: 06-fitness-and-health/flexibility/warm-up-routine.md
+      - 打球後收操: 06-fitness-and-health/flexibility/cool-down-routine.md
+      - 髖部柔軟度: 06-fitness-and-health/flexibility/hip-flexibility.md
+      - 胸椎旋轉活動度: 06-fitness-and-health/flexibility/thoracic-rotation.md
+    - 傷害預防:
+      - 手腕保養: 06-fitness-and-health/injury-prevention/wrist-care.md
+      - 手肘保養: 06-fitness-and-health/injury-prevention/elbow-care.md
+      - 下背部保護: 06-fitness-and-health/injury-prevention/lower-back-care.md
+      - 肩袖保養: 06-fitness-and-health/injury-prevention/shoulder-care.md
+      - 膝蓋保護: 06-fitness-and-health/injury-prevention/knee-care.md
+    - 恢復:
+      - 打完球後的恢復: 06-fitness-and-health/recovery/post-round-recovery.md
+      - 高爾夫運動營養: 06-fitness-and-health/recovery/nutrition.md
+      - 睡眠與恢復: 06-fitness-and-health/recovery/sleep-recovery.md
   - 📋 參考資料:
-    - 術語表: 06-reference/glossary.md
-    - 規則速查: 06-reference/rules-quick-ref.md
-    - 練習計劃: 06-reference/practice-drills.md
+    - 術語表: 07-reference/glossary.md
+    - 規則速查: 07-reference/rules-quick-ref.md
+    - 練習計劃: 07-reference/practice-drills.md
