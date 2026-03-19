@@ -79,8 +79,9 @@ nav:
     - 球場管理策略: 02-intermediate/05-course-management.md
   - 🟠 進階:
     - 總覽: 03-advanced/README.md
-    - 右曲球 Draw: 03-advanced/01-draw-shot.md
-    - 左曲球 Fade: 03-advanced/02-fade-shot.md
+    - 右曲球 Draw（右打者）: 03-advanced/01-draw-shot.md
+    - 左曲球 Fade（右打者）: 03-advanced/02-fade-shot.md
+    - 左打者參考指南: 03-advanced/left-handed-reference.md
     - 低飛球 Punch: 03-advanced/03-punch-shot.md
     - 高吊球 Flop: 03-advanced/04-flop-shot.md
     - Stinger 壓低彈道: 03-advanced/05-stinger.md
