@@ -1,0 +1,117 @@
+site_name: ⛳ 高爾夫完整學習指南
+site_description: 從初學者到職業選手的全方位高爾夫教學文件
+site_author: Jeffrey Pai
+site_url: https://jeffrey-pai.github.io/Golf/
+
+repo_name: Jeffrey-Pai/Golf
+repo_url: https://github.com/Jeffrey-Pai/Golf
+edit_uri: edit/main/golf-guide/
+
+docs_dir: golf-guide
+
+theme:
+  name: material
+  language: zh-TW
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: green
+      accent: light green
+      toggle:
+        icon: material/brightness-7
+        name: 切換至深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: green
+      accent: light green
+      toggle:
+        icon: material/brightness-4
+        name: 切換至淺色模式
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.share
+    - search.suggest
+    - content.action.edit
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang: zh
+
+markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - 首頁: README.md
+  - 🟢 初學者:
+    - 總覽: 01-beginner/README.md
+    - 高爾夫基礎介紹: 01-beginner/01-what-is-golf.md
+    - 球具選擇指南: 01-beginner/02-equipment-guide.md
+    - 禮儀與規則: 01-beginner/03-golf-etiquette.md
+    - 基本站姿與握桿: 01-beginner/04-basic-stance.md
+    - 第一次揮桿: 01-beginner/05-first-swing.md
+  - 🔵 中級:
+    - 總覽: 02-intermediate/README.md
+    - 鐵桿技術: 02-intermediate/01-iron-play.md
+    - 球道木桿: 02-intermediate/02-fairway-woods.md
+    - 短打技術: 02-intermediate/03-short-game.md
+    - 沙坑救球: 02-intermediate/04-bunker-shots.md
+    - 球場管理策略: 02-intermediate/05-course-management.md
+  - 🟠 進階:
+    - 總覽: 03-advanced/README.md
+    - 右曲球 Draw: 03-advanced/01-draw-shot.md
+    - 左曲球 Fade: 03-advanced/02-fade-shot.md
+    - 低飛球 Punch: 03-advanced/03-punch-shot.md
+    - 高吊球 Flop: 03-advanced/04-flop-shot.md
+    - Stinger 壓低彈道: 03-advanced/05-stinger.md
+    - 風中打球: 03-advanced/06-wind-play.md
+    - 坡地打球: 03-advanced/07-uneven-lies.md
+  - 🔴 職業:
+    - 總覽: 04-professional/README.md
+    - 球路塑造技術: 04-professional/01-shot-shaping.md
+    - 職業球場策略: 04-professional/02-course-strategy.md
+    - 心理訓練: 04-professional/03-mental-game.md
+    - 高爾夫體能訓練: 04-professional/04-fitness-training.md
+    - 比賽準備: 04-professional/05-tournament-prep.md
+  - 🎯 球技專區:
+    - 總覽: 05-shot-techniques/README.md
+    - 曲球技術:
+      - Draw 右曲球: 05-shot-techniques/draws-and-fades/draw-shot.md
+      - Fade 左曲球: 05-shot-techniques/draws-and-fades/fade-shot.md
+      - Hook 過度右曲: 05-shot-techniques/draws-and-fades/hook-shot.md
+      - Slice 修正: 05-shot-techniques/draws-and-fades/slice-correction.md
+    - 特殊球技:
+      - Flop Shot 高吊短打: 05-shot-techniques/specialty-shots/flop-shot.md
+      - Punch Shot 低飛穿刺: 05-shot-techniques/specialty-shots/punch-shot.md
+      - Bump and Run 滾地短打: 05-shot-techniques/specialty-shots/bump-and-run.md
+      - Knockdown Shot 壓低彈道: 05-shot-techniques/specialty-shots/knockdown-shot.md
+      - Intentional Miss 刻意偏移: 05-shot-techniques/specialty-shots/intentional-miss.md
+    - 推桿技術:
+      - 推桿基礎: 05-shot-techniques/putting/basics.md
+      - 讀果嶺: 05-shot-techniques/putting/reading-greens.md
+      - 長距推桿: 05-shot-techniques/putting/lag-putting.md
+      - 壓力推桿: 05-shot-techniques/putting/pressure-putting.md
+  - 📋 參考資料:
+    - 術語表: 06-reference/glossary.md
+    - 規則速查: 06-reference/rules-quick-ref.md
+    - 練習計劃: 06-reference/practice-drills.md
