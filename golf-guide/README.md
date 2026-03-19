@@ -107,51 +107,13 @@
 
 ---
 
-### 💪 [06 - 健身與保養 (Fitness & Health)](./06-fitness-and-health/README.md)
-**提升球技的身體素質與傷害預防**
-
-#### 肌力訓練 (Strength Training)
-| 文件 | 內容 |
-|------|------|
-| [肌力訓練總覽](./06-fitness-and-health/strength-training/overview.md) | 高爾夫專項肌力訓練架構 |
-| [核心肌群訓練](./06-fitness-and-health/strength-training/core-training.md) | 穩定揮桿的核心力量 |
-| [髖部旋轉訓練](./06-fitness-and-health/strength-training/hip-rotation.md) | 增加揮桿旋轉力量 |
-| [肩部穩定訓練](./06-fitness-and-health/strength-training/shoulder-stability.md) | 保護肩袖、穩定擊球 |
-| [下肢爆發力](./06-fitness-and-health/strength-training/leg-power.md) | 地面反力與桿頭速度 |
-
-#### 柔軟度訓練 (Flexibility)
-| 文件 | 內容 |
-|------|------|
-| [打球前暖身流程](./06-fitness-and-health/flexibility/warm-up-routine.md) | 15分鐘完整暖身序列 ⭐ |
-| [打球後收操流程](./06-fitness-and-health/flexibility/cool-down-routine.md) | 賽後恢復伸展 |
-| [髖部柔軟度](./06-fitness-and-health/flexibility/hip-flexibility.md) | 髖關節活動度訓練 |
-| [胸椎旋轉活動度](./06-fitness-and-health/flexibility/thoracic-rotation.md) | 提升上身旋轉幅度 |
-
-#### 傷害預防 (Injury Prevention)
-| 文件 | 內容 |
-|------|------|
-| [手腕保養](./06-fitness-and-health/injury-prevention/wrist-care.md) | FCU 肌腱、de Quervain、hamate 骨折 ⭐ |
-| [手肘保養](./06-fitness-and-health/injury-prevention/elbow-care.md) | 高爾夫肘 vs 網球肘完整指南 ⭐ |
-| [下背部保護](./06-fitness-and-health/injury-prevention/lower-back-care.md) | 預防腰椎傷害 |
-| [肩袖保養](./06-fitness-and-health/injury-prevention/shoulder-care.md) | 旋轉肌群保護 |
-| [膝蓋保護](./06-fitness-and-health/injury-prevention/knee-care.md) | 減少膝關節壓力 |
-
-#### 恢復 (Recovery)
-| 文件 | 內容 |
-|------|------|
-| [打完球後的恢復](./06-fitness-and-health/recovery/post-round-recovery.md) | 賽後身體恢復策略 |
-| [高爾夫運動營養](./06-fitness-and-health/recovery/nutrition.md) | 補給時間與飲食策略 |
-| [睡眠與恢復](./06-fitness-and-health/recovery/sleep-recovery.md) | 優化睡眠提升表現 |
-
----
-
-### 📋 [07 - 參考資料 (Reference)](./07-reference/)
+### 📋 [06 - 參考資料 (Reference)](./06-reference/)
 
 | 文件 | 內容 |
 |------|------|
-| [術語表](./07-reference/glossary.md) | 中英高爾夫術語對照 |
-| [規則速查](./07-reference/rules-quick-ref.md) | 常見規則快速參考 |
-| [練習計劃](./07-reference/practice-drills.md) | 系統化練習訓練計劃 |
+| [術語表](./06-reference/glossary.md) | 中英高爾夫術語對照 |
+| [規則速查](./06-reference/rules-quick-ref.md) | 常見規則快速參考 |
+| [練習計劃](./06-reference/practice-drills.md) | 系統化練習訓練計劃 |
 
 ---
 
@@ -173,8 +135,7 @@
 ### 進階精英
 1. 掌握所有 [球路塑造技術](./04-professional/01-shot-shaping.md)
 2. 精研 [心理訓練](./04-professional/03-mental-game.md)
-3. 執行 [體能訓練計劃](./06-fitness-and-health/strength-training/overview.md)
-4. 做好 [傷害預防](./06-fitness-and-health/injury-prevention/wrist-care.md)
+3. 執行 [體能訓練計劃](./04-professional/04-fitness-training.md)
 
 ---
 
@@ -183,8 +144,7 @@
 - 每個文件包含**概覽、技術分解、常見錯誤、練習訓練**四大區塊
 - 文件頂部的 frontmatter 說明**難度等級**與**前置技術**
 - 善用文件內的**相關技術連結**串聯學習
-- 遇到不熟悉的術語，請參考 [術語表](./07-reference/glossary.md)
-- 健身保養請參考 [06 - 健身與保養](./06-fitness-and-health/README.md)
+- 遇到不熟悉的術語，請參考 [術語表](./06-reference/glossary.md)
 
 ---
 
