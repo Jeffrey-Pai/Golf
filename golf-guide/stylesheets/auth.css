@@ -1,0 +1,301 @@
+/* =========================================================
+   Golf Guide – Authentication styles
+   Covers: login page card, user widget in the header
+   ========================================================= */
+
+/* ---- FOUC prevention (set by overrides/main.html) ------- */
+html[data-auth-pending] {
+  visibility: hidden;
+}
+
+/* ---- No-JavaScript fallback ----------------------------- */
+.golf-noscript-msg {
+  text-align: center;
+  color: #c62828;
+  padding: 2rem 1rem;
+}
+
+/* =========================================================
+   Login page card
+   ========================================================= */
+
+.golf-login-card {
+  max-width: 420px;
+  margin: 2rem auto 3rem;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  background: var(--md-default-bg-color);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.08),
+    0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ---- Header --------------------------------------------- */
+.golf-login-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.golf-login-logo {
+  font-size: 3rem;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.golf-login-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+  color: var(--md-default-fg-color);
+}
+
+.golf-login-subtitle {
+  font-size: 0.875rem;
+  color: var(--md-default-fg-color--light);
+  margin: 0;
+}
+
+/* ---- Notice (unconfigured Firebase) --------------------- */
+.golf-auth-notice {
+  font-size: 0.8125rem;
+  background: var(--md-admonition-bg-color, #fff8e1);
+  border-left: 4px solid #ffc107;
+  padding: 0.6rem 0.9rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+  color: var(--md-default-fg-color);
+}
+
+/* ---- Status message ------------------------------------- */
+.golf-auth-msg {
+  font-size: 0.875rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.golf-auth-msg--error {
+  background: #fdecea;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+.golf-auth-msg--success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+/* ---- Google button -------------------------------------- */
+.golf-btn--google {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  background: #fff;
+  color: #3c4043;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+.golf-btn--google:hover {
+  background: #f8f9fa;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.golf-google-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ---- Divider -------------------------------------------- */
+.golf-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+  color: var(--md-default-fg-color--lighter);
+  font-size: 0.8125rem;
+}
+
+.golf-divider::before,
+.golf-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--md-default-fg-color--lightest);
+}
+
+/* ---- Form fields ---------------------------------------- */
+.golf-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.golf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.golf-field label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color--light);
+}
+
+.golf-field input {
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 6px;
+  font-size: 0.9375rem;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+
+.golf-field input:focus {
+  border-color: var(--md-primary-fg-color);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.18);
+}
+
+/* ---- Primary button ------------------------------------- */
+.golf-btn--primary {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  margin-top: 0.35rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.golf-btn--primary:hover {
+  opacity: 0.9;
+}
+
+/* ---- Toggle link (login ↔ register) --------------------- */
+.golf-auth-toggle {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: 1.25rem;
+}
+
+.golf-auth-toggle-btn {
+  background: none;
+  border: none;
+  color: var(--md-primary-fg-color);
+  font-size: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0 0.2rem;
+}
+
+.golf-auth-toggle-btn:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   User widget injected into the Material header
+   ========================================================= */
+
+.golf-auth-widget {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding: 0 0.5rem;
+}
+
+.golf-auth-user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.golf-auth-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.golf-auth-avatar--text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--md-primary-bg-color, #fff);
+  color: var(--md-primary-fg-color);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.golf-auth-name {
+  color: var(--md-primary-bg-color);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.golf-auth-logout-btn {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--md-primary-bg-color);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.golf-auth-logout-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.golf-auth-login-link {
+  color: var(--md-primary-bg-color);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.golf-auth-login-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ---- Responsive tweaks ---------------------------------- */
+@media (max-width: 600px) {
+  .golf-auth-name {
+    display: none;
+  }
+
+  .golf-login-card {
+    margin: 1rem;
+    padding: 1.5rem 1.25rem;
+  }
+}
