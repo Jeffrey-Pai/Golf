@@ -70,8 +70,29 @@
 
 > 以下步驟在 Firebase v10（2024 年新版 Console）仍完全適用。
 
+> ❌ **常見錯誤：不要使用服務帳戶金鑰（Service Account JSON）！**  
+> 如果您在 Firebase Console 中看到類似以下的 JSON，那是 **Admin SDK 服務帳戶金鑰**，  
+> 用於伺服器端程式，**不適用於本專案**，請勿使用：
+>
+> ```json
+> {
+>   "type": "service_account",
+>   "project_id": "your-project",
+>   "private_key_id": "...",
+>   "private_key": "-----BEGIN RSA PRIVATE KEY-----\n...",
+>   "client_email": "firebase-adminsdk-xxxxx@your-project.iam.gserviceaccount.com",
+>   ...
+> }
+> ```
+>
+> 本專案是靜態網頁（GitHub Pages），使用 **Firebase 用戶端 Web SDK**，  
+> 需要的是下方說明的 **`firebaseConfig` 物件中的六個欄位**，而不是服務帳戶金鑰。
+
+**正確的取得方式：**
+
 1. 回到 Firebase 專案首頁，點選左上角 **齒輪圖示（⚙️）** → **「專案設定（Project settings）」**
-2. 在 **「一般（General）」** 標籤頁，往下捲動至 **「您的應用程式（Your apps）」** 區塊
+2. 在 **「一般（General）」** 標籤頁，往下捲動至 **「您的應用程式（Your apps）」** 區塊  
+   ⚠️ 注意：不是「服務帳戶（Service accounts）」標籤，而是 **「一般（General）」** 標籤
 3. 若尚未新增 Web 應用程式，點選 **「\</> 網頁（Web）」** 圖示：
    - 輸入應用程式暱稱（例如 `golf-guide`）
    - 不需勾選 Firebase Hosting

@@ -56,9 +56,13 @@ jobs:
               'messagingSenderId': os.environ.get('FIREBASE_MESSAGING_SENDER_ID', ''),
               'appId':             os.environ.get('FIREBASE_APP_ID', ''),
           }
+          marker = 'window.GOLF_FIREBASE_CONFIG'
           with open('golf-guide/javascripts/firebase-config.js') as f:
-              header = f.read().split('window.GOLF_FIREBASE_CONFIG')[0]
-          js = header + 'window.GOLF_FIREBASE_CONFIG = ' + json.dumps(cfg, indent=2) + ';\n'
+              content = f.read()
+          if marker not in content:
+              raise ValueError(f'Marker not found in firebase-config.js: {marker}')
+          header = content.split(marker)[0]
+          js = header + marker + ' = ' + json.dumps(cfg, indent=2) + ';\n'
           with open('golf-guide/javascripts/firebase-config.js', 'w') as f:
               f.write(js)
           "
