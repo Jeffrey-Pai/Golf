@@ -1,1 +1,5 @@
 site/
+
+# Never commit real Firebase keys.
+# Real values are injected at build time from GitHub Actions Secrets.
+# See: .github/workflows/deploy.yml and golf-guide/javascripts/firebase-config.js
