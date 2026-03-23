@@ -28,7 +28,10 @@
         "/",
         "/index.html"
       ];
-      var isPublic = publicPaths.indexOf(path) !== -1;
+      var isPublic =
+        publicPaths.indexOf(path) !== -1 ||
+        path.endsWith("/login/") ||
+        path.endsWith("/login/index.html");
       if (!isPublic) {
         document.documentElement.setAttribute("data-auth-pending", "true");
         // Safety fallback: reveal content after a timeout in case scripts fail to load

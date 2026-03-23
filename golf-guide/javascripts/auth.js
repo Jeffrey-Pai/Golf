@@ -388,7 +388,10 @@
 
     // Auth state listener
     firebase.auth().onAuthStateChanged(function (user) {
-      revealContent();
+      // NOTE: Do NOT call revealContent() here unconditionally.
+      // Content stays hidden (FOUC-prevention) until we confirm the user
+      // may actually view the page. Calling it before the checks below
+      // would cause a flash of protected content before a redirect occurs.
 
       // Enforce email verification for email/password accounts.
       // Google-signed-in users always have emailVerified === true.
@@ -402,6 +405,8 @@
           );
         }
         firebase.auth().signOut();
+        // Do not reveal content – onAuthStateChanged will fire again after
+        // signOut completes and handle the redirect or page reveal then.
         return;
       }
 
@@ -411,11 +416,19 @@
         // Signed in and verified – if on login page, redirect to target
         if (isLoginPage()) {
           window.location.replace(getRedirectTarget());
+          // No need to reveal; we are navigating away immediately.
+        } else {
+          // Authenticated user viewing a protected page – show the content.
+          revealContent();
         }
       } else {
-        // Signed out – redirect protected pages to login
+        // Signed out – redirect protected pages to login without revealing
+        // content first (prevents flash of protected content).
         if (!isPublicPage()) {
           redirectToLogin();
+        } else {
+          // Public page (home, login) – safe to reveal.
+          revealContent();
         }
       }
     });
