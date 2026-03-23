@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  {# Inject site base path and FOUC-prevention before any content renders #}
+  <script>
+    // Extract the pathname base from the configured site URL
+    window.GOLF_SITE_BASE = (function () {
+      var siteUrl = "{{ config.site_url }}";
+      try {
+        return new URL(siteUrl).pathname.replace(/\/$/, "");
+      } catch (e) {
+        return "";
+      }
+    })();
+
+    // Prevent flash of unauthorized content on protected pages.
+    // We hide the document immediately; auth.js will reveal it once
+    // the Firebase auth state is known.
+    (function () {
+      var base = window.GOLF_SITE_BASE || "";
+      var path = window.location.pathname;
+      var publicPaths = [
+        base + "/",
+        base + "/index.html",
+        base + "/login/",
+        base + "/login/index.html",
+        "/",
+        "/index.html"
+      ];
+      var isPublic = publicPaths.indexOf(path) !== -1;
+      if (!isPublic) {
+        document.documentElement.setAttribute("data-auth-pending", "true");
+        // Safety fallback: reveal content after a timeout in case scripts fail to load
+        var AUTH_FALLBACK_TIMEOUT_MS = 4000;
+        setTimeout(function () {
+          document.documentElement.removeAttribute("data-auth-pending");
+        }, AUTH_FALLBACK_TIMEOUT_MS);
+      }
+    })();
+  </script>
+  <style>
+    html[data-auth-pending] { visibility: hidden; }
+  </style>
+{% endblock %}

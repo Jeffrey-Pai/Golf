@@ -11,6 +11,7 @@ docs_dir: golf-guide
 
 theme:
   name: material
+  custom_dir: overrides
   language: zh-TW
   palette:
     - media: "(prefers-color-scheme: light)"
@@ -42,6 +43,15 @@ theme:
   icon:
     repo: fontawesome/brands/github
 
+extra_css:
+  - stylesheets/auth.css
+
+extra_javascript:
+  - https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js
+  - https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js
+  - javascripts/firebase-config.js
+  - javascripts/auth.js
+
 plugins:
   - search:
       lang: zh
@@ -63,6 +73,7 @@ markdown_extensions:
 
 nav:
   - 首頁: README.md
+  - 🔐 登入: login.md
   - 🟢 初學者:
     - 總覽: 01-beginner/README.md
     - 高爾夫基礎介紹: 01-beginner/01-what-is-golf.md
