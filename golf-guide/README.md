@@ -107,6 +107,27 @@
 
 ---
 
+### 🏋️ [07 - 基本能力訓練 (Basic Fitness Training)](./07-basic-fitness/README.md)
+**讓身體更不容易受傷的基礎體能建構**
+
+| 文件 | 內容 | 重要性 |
+|------|------|--------|
+| [柔軟度訓練](./07-basic-fitness/01-flexibility-training.md) | 胸椎、髖關節等關鍵部位的伸展計劃 | ⭐⭐⭐⭐⭐ |
+| [肌力訓練](./07-basic-fitness/02-strength-training.md) | 核心、臀部、肩袖的高爾夫專項肌力訓練 | ⭐⭐⭐⭐ |
+| [受傷預防指南](./07-basic-fitness/03-injury-prevention.md) | 常見高爾夫傷害與預防策略 | ⭐⭐⭐⭐⭐ |
+
+---
+
+### 🏌️ [08 - 練習場與推切桿練習 (Range & Short Game Practice)](./08-range-practice/README.md)
+**沒有下場時的高效練習計劃**
+
+| 文件 | 內容 | 重要性 |
+|------|------|--------|
+| [練習場訓練分配計劃](./08-range-practice/01-range-practice-plan.md) | 各程度球手的練習場時間與球數分配策略 | ⭐⭐⭐⭐⭐ |
+| [推切桿專項練習](./08-range-practice/02-short-game-practice.md) | 推桿、切桿、Pitch 的系統化練習方法 | ⭐⭐⭐⭐⭐ |
+
+---
+
 ### 📋 [06 - 參考資料 (Reference)](./06-reference/)
 
 | 文件 | 內容 |
