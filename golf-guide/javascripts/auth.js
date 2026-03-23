@@ -23,6 +23,12 @@
   var isConfigured = !!(cfg.apiKey && cfg.projectId);
   var siteBase = (window.GOLF_SITE_BASE || "").replace(/\/$/, "");
 
+  // Queued message to display on the login form once it is rendered
+  var pendingAuthMsg = null;
+  // Set to true during the registration flow so onAuthStateChanged does not
+  // show the "email not verified" error while the new account is being set up
+  var justRegistered = false;
+
   // Pages that are accessible without authentication
   var PUBLIC_PATHS = [
     siteBase + "/",
@@ -74,6 +80,22 @@
       "/login/?redirect=" +
       encodeURIComponent(window.location.href);
     window.location.replace(target);
+  }
+
+  /**
+   * Display a message on the login page's auth-message element.
+   * If the element does not exist yet (form not rendered), stores the
+   * message in pendingAuthMsg so renderLoginForm can apply it later.
+   */
+  function showAuthMsg(text, type) {
+    var el = document.getElementById("golf-auth-msg");
+    if (el) {
+      el.className = "golf-auth-msg golf-auth-msg--" + type;
+      el.textContent = text;
+      el.hidden = false;
+    } else {
+      pendingAuthMsg = { text: text, type: type };
+    }
   }
 
   /* ------------------------------------------------------------------ */
@@ -259,6 +281,7 @@
           var nameInput = document.getElementById("golf-name");
           var displayName = nameInput ? nameInput.value.trim() : "";
 
+          justRegistered = true;
           firebase
             .auth()
             .createUserWithEmailAndPassword(email, password)
@@ -266,9 +289,15 @@
               var updates = displayName
                 ? cred.user.updateProfile({ displayName: displayName })
                 : Promise.resolve();
-              return updates.then(function () {
-                return cred.user.sendEmailVerification();
-              });
+              return updates
+                .then(function () {
+                  return cred.user.sendEmailVerification();
+                })
+                .then(function () {
+                  // Sign out immediately so the user must verify before accessing
+                  // protected content; onAuthStateChanged will not redirect them.
+                  return firebase.auth().signOut();
+                });
             })
             .then(function () {
               setMsg(
@@ -278,6 +307,9 @@
             })
             .catch(function (err) {
               setMsg(friendlyError(err), "error");
+            })
+            .finally(function () {
+              justRegistered = false;
             });
         } else {
           firebase
@@ -295,6 +327,13 @@
         clearMsg();
         build();
       });
+
+      // Apply any message queued before the form was rendered
+      // (e.g., email-not-verified notice set by onAuthStateChanged)
+      if (pendingAuthMsg) {
+        showAuthMsg(pendingAuthMsg.text, pendingAuthMsg.type);
+        pendingAuthMsg = null;
+      }
     }
 
     build();
@@ -350,10 +389,26 @@
     // Auth state listener
     firebase.auth().onAuthStateChanged(function (user) {
       revealContent();
+
+      // Enforce email verification for email/password accounts.
+      // Google-signed-in users always have emailVerified === true.
+      // Skip the error message during the registration flow (justRegistered)
+      // because the registration handler shows its own success message.
+      if (user && !user.emailVerified) {
+        if (isLoginPage() && !justRegistered) {
+          showAuthMsg(
+            "您的電子郵件尚未驗證，請至信箱點擊驗證連結後再登入。",
+            "error"
+          );
+        }
+        firebase.auth().signOut();
+        return;
+      }
+
       injectUserWidget(user);
 
       if (user) {
-        // Signed in – if on login page, redirect to target
+        // Signed in and verified – if on login page, redirect to target
         if (isLoginPage()) {
           window.location.replace(getRedirectTarget());
         }
